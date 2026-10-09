@@ -67,7 +67,8 @@ Each milestone ends in a check a scripted, background test can run (off-screen, 
 Made:
 - Name: decompisle2 (avoids the publisher's trademark as the project name).
 - License: GPL-3.0-or-later.
-- Public from the first commit; the private upstream lab stays the working copy.
+- Published when it's ready (the user's call); until then it's committed locally only. The private upstream lab stays
+  the working copy.
 - Stack: keep the Gore Lab's Rust core + Godot 4.7.
 
 Open (recommendation first):
