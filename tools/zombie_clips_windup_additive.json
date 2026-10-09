@@ -1,0 +1,17 @@
+{
+ "shambler": [
+  "A_ZMB_Walker_Attack_Lurch_WindUp_Additive",
+  "A_ZMB_Walker_Attack_Swipe_LH_Vert_WindUp_Additive",
+  "A_ZMB_Walker_Attack_Swipe_RH_Horiz_Windup_Additive"
+ ],
+ "thug": [
+  "A_ZMB_Thug_Attack_Punch_LH_WindUp_Additive",
+  "A_ZMB_Thug_Attack_Punch_RH_WindUp_Additive",
+  "A_ZMB_Thug_Attack_Smash_WindUp_Additive"
+ ],
+ "walker": [
+  "A_ZMB_Walker_Attack_Lurch_WindUp_Additive",
+  "A_ZMB_Walker_Attack_Swipe_LH_Vert_WindUp_Additive",
+  "A_ZMB_Walker_Attack_Swipe_RH_Horiz_Windup_Additive"
+ ]
+}

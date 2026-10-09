@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://chjejqvnugwle"
+path="res://.godot/imported/di2_post_fog.glsl-9fe3b7d043ee749ccf1e917b2ff0bcb5.res"
+
+[deps]
+
+source_file="res://shaders/di2_post_fog.glsl"
+dest_files=["res://.godot/imported/di2_post_fog.glsl-9fe3b7d043ee749ccf1e917b2ff0bcb5.res"]
+
+[params]
+

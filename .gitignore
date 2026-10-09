@@ -1,0 +1,59 @@
+# Content pulled from the user's own DI2 install: personal testing only, never commit or share.
+/extracted/
+/game/assets/di2/
+# Values extracted from DI2 data (regenerate with tools/build_*.py and the other converters).
+/game/data/
+# Game-derived recon dumps and the decryption key.
+/recon/aes_key.txt
+/recon/exe_strings.txt
+/recon/utoc_headers.csv
+# Unreal containers and assets, Wwise media.
+*.pak
+*.utoc
+*.ucas
+*.uasset
+*.uexp
+*.umap
+*.ubulk
+*.bnk
+*.wem
+*.glb
+
+# Test output (screenshots and logs show game art).
+/game/test_out/
+*.png
+*.jpg
+*.log
+
+# Third-party tools and downloads (fetch again; see README).
+/tools/dotnet10/
+/tools/godot/
+/tools/downloads/
+/tools/ffdec/
+/tools/cue4parse-src/
+/tools/acl13/
+/tools/shaders/bin/
+
+# Build output and caches.
+target/
+bin/
+obj/
+.godot/
+__pycache__/
+*.pyc
+*.exe
+*.dll
+*.obj
+*.pdb
+*.lib
+*.zip
+/.locks/
+game/override.cfg
+
+# Claude Code per-machine settings (local permissions), never committed.
+/.claude/settings.local.json
+
+# Game data, outputs, extracted assets and agent worktrees: never committed
+gamedata/
+out/
+.claude/worktrees/

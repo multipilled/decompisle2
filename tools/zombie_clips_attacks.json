@@ -1,0 +1,23 @@
+{
+ "runner": [
+  "A_ZMB_Runner_Attack_Swipe_LH_VertUp_Impact_Short",
+  "A_ZMB_Runner_Attack_Swipe_RH_VertUp_Impact_Short"
+ ],
+ "thug": [
+  "A_ZMB_Thug_Attack_Smash_IntoStatic_Med"
+ ],
+ "walker": [
+  "A_ZMB_Walker_Attack_Bite_Attack_IntoStatic_Med",
+  "A_ZMB_Walker_Attack_Lurch_Attack_Med",
+  "A_ZMB_Walker_Attack_Swipe_LH_Horiz_IntoStatic_Long",
+  "A_ZMB_Walker_Attack_Swipe_LH_Horiz_IntoStatic_Med",
+  "A_ZMB_Walker_Attack_Swipe_LH_Vert_IntoStatic_Long",
+  "A_ZMB_Walker_Attack_Swipe_LH_Vert_IntoStatic_Med",
+  "A_ZMB_Walker_Attack_Swipe_RH_Horiz_IntoStatic_Long",
+  "A_ZMB_Walker_Attack_Swipe_RH_Horiz_IntoStatic_Med",
+  "A_ZMB_Walker_Attack_Swipe_RH_Vert_IntoStatic_Long",
+  "A_ZMB_Walker_Attack_Swipe_RH_Vert_IntoStatic_Med",
+  "A_ZMB_Walker_Crawler_Attack_WindUp_LH_SwipeR_01",
+  "A_ZMB_Walker_Crawler_Attack_WindUp_RH_SwipeL_01"
+ ]
+}

@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://chhysw25j33r6"
+path="res://.godot/imported/splatter_apply.glsl-5275702a99681acaf3f10a8c031b8df1.res"
+
+[deps]
+
+source_file="res://shaders/compute/splatter_apply.glsl"
+dest_files=["res://.godot/imported/splatter_apply.glsl-5275702a99681acaf3f10a8c031b8df1.res"]
+
+[params]
+

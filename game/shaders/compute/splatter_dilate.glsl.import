@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cxeagix1lt7h5"
+path="res://.godot/imported/splatter_dilate.glsl-90451989f77b828e62da845c3495dba1.res"
+
+[deps]
+
+source_file="res://shaders/compute/splatter_dilate.glsl"
+dest_files=["res://.godot/imported/splatter_dilate.glsl-90451989f77b828e62da845c3495dba1.res"]
+
+[params]
+

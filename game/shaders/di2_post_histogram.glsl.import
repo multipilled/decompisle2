@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://8e3ya8r4s3sq"
+path="res://.godot/imported/di2_post_histogram.glsl-6923d24befc2ccc10cc0db92122922d5.res"
+
+[deps]
+
+source_file="res://shaders/di2_post_histogram.glsl"
+dest_files=["res://.godot/imported/di2_post_histogram.glsl-6923d24befc2ccc10cc0db92122922d5.res"]
+
+[params]
+

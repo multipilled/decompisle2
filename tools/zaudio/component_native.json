@@ -1,0 +1,87 @@
+{
+ "_doc": "Native defaults recovered from DI2's exe (static Ghidra RE, recon/ZOMBIE_AUDIO.md section 3). component = UBreathingAudioComponent InternalConstructor 0x141b67a90 (bUseDialogueTriggers is false there; the procedural voice apply 0x14119afd0 -> 0x141167b10 sets it true for a DamLoc voice, so it is true here); character_voice_definition = UCharacterVoiceDefinition 0x141b7e8b0, copied wholesale onto the component by 0x141170bd0 (its JustDamaged / Dying assets are empty and both bHas flags false); anim_notify_breathing_event = UAnimNotify_BreathingEvent 0x141b41640.",
+ "component": {
+  "bUseDialogueTriggers": true,
+  "BreathInTrigger": [
+   "Breathing",
+   "BreathIn"
+  ],
+  "BreathOutTrigger": [
+   "Breathing",
+   "BreathOut"
+  ],
+  "QuickBreathInTrigger": [
+   "Breathing",
+   "QuickBreathIn"
+  ],
+  "ExertTrigger": [
+   "Breathing",
+   "Exert"
+  ],
+  "CalmHoldBreathInTime": 0.0,
+  "CalmHoldBreathOutTime": 0.0,
+  "AlertedHoldBreathInTime": 0.0,
+  "AlertedHoldBreathOutTime": 0.0,
+  "GrappleHoldBreathInTime": 0.0,
+  "GrappleHoldBreathOutTime": 0.0,
+  "bHasJustDamagedVocalAsset": false,
+  "ChanceToPlayJustDamagedVocal": 0.33,
+  "JustDamagedVocalAsset": [
+   "Breathing",
+   "HitReact"
+  ],
+  "JustDamagedExpression": "BeginningGrapple || WithinGrapple || WithinCounter",
+  "bHasDyingVocalAsset": false,
+  "DyingVocalAsset": [
+   "Breathing",
+   "Death"
+  ],
+  "BlockBreathingExpression": "",
+  "AttachName": "head",
+  "LocalRotation": [
+   0.0,
+   90.0,
+   0.0
+  ],
+  "PostEventExtraParams": [
+   1.0,
+   0.2,
+   true
+  ],
+  "initial_state": "HoldingBreathOut"
+ },
+ "character_voice_definition": {
+  "CalmHoldBreathInTime": 0.1,
+  "CalmHoldBreathOutTime": 0.1,
+  "AlertedHoldBreathInTime": 0.0,
+  "AlertedHoldBreathOutTime": 0.0,
+  "GrappleHoldBreathInTime": 0.0,
+  "GrappleHoldBreathOutTime": 0.0,
+  "ChanceToPlayJustDamagedVocal": 0.33,
+  "bHasJustDamagedVocalAsset": false,
+  "bHasDyingVocalAsset": false,
+  "JustDamagedVocalAsset": [
+   null,
+   null
+  ],
+  "DyingVocalAsset": [
+   null,
+   null
+  ]
+ },
+ "anim_notify_breathing_event": {
+  "event": "Exert",
+  "play_type": "InterruptQuickInhaleThenPlay",
+  "flags": 0
+ },
+ "states": [
+  "BreathingIn",
+  "InterruptedBreathingIn",
+  "HoldingBreathIn",
+  "BreathingOut",
+  "VocalBreathingOut",
+  "HoldingBreathOut",
+  "ExternalDialoguePlayingOut",
+  "Dead"
+ ]
+}
