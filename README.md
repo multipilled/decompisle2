@@ -1,10 +1,18 @@
-# DI2 Gore Lab
+# decompisle2
 
-A personal test bed. It recreates Dead Island 2's gore system (internally "Splatter", marketed as FLESH) and its zombies, with the simulation written in Rust and a playable arena in Godot 4.7. You play Dani in first person with DI2's bat, machete and pistol.
+A fan rewrite that aims to make the whole of Dead Island 2 playable 1:1 from your own copy of the game: every map,
+quest, zombie, slayer, weapon and system, behaving and rendering as in the original. New code only (a Rust core and
+Godot 4.7); the game's assets and data are read from your install at runtime and never ship here. Single player,
+offline.
 
-**Personal testing only.** `game/assets/di2/` and `extracted/` hold content pulled from your own DI2 install. Don't share them or commit them. The `.gitignore` already excludes them. The Rust core and the tools are original code.
+It starts from the **DI2 Gore Lab**, a working recreation of DI2's gore system (internally "Splatter", marketed as
+FLESH) and its zombies: you play Dani in first person with DI2's weapons on a Horde map. The plan is in
+[docs/PLAN.md](docs/PLAN.md).
 
-**Progress: about 46% of the goal** (a fully playable showcase build on Horde map NH_04 with the full UI, gameplay, gore, every zombie variant and the whole map rendered as in game). Milestone table under [Status](#status).
+**Your own copy only.** `game/assets/di2/`, `extracted/` and `gamedata/` hold content pulled from your own install.
+Don't share them or commit them; the `.gitignore` and the commit guard keep them out.
+
+**Progress: about 20% of the full game** (milestones under [Status](#status)).
 
 ## Run
 
@@ -18,7 +26,7 @@ A personal test bed. It recreates Dead Island 2's gore system (internally "Splat
 | `python tools/build_explosions.py` | DI2 explosion archetypes, curves and balancing -> `game/data/explosions.json` (recon/RE_EXPLOSIONS.md) |
 | `tools/re_explosion/decomp.sh <name> <addr...>` | Headless Ghidra decompile (extracted/ghidra project) for the explosion RE |
 | `tools/run_all_tests.sh [flesh autotest combat weapon]` | Every autotest in the background (off-screen, CPU-throttled); logs in `game/test_out/logs/` |
-| `tools/with_cpu.sh <who> <cmd>` | Shared CPU budget for heavy jobs: 2 at a time, below-normal priority |
+| `tools/with_cpu.sh <who> <cmd>` | Runs a heavy job at low priority (and in a shared job slot when the machine has a slot script); `with_gpu.sh` and `with_lock.sh` likewise |
 | `cd rust && cargo test -p gore-core` | 16 unit tests of the gore and zombie rules |
 | `cd rust && cargo build -p gore-godot` | Rebuilds the Godot extension after Rust changes |
 
@@ -84,14 +92,31 @@ A personal test bed. It recreates Dead Island 2's gore system (internally "Splat
 ## Known gaps
 - Everything in `recon/UNVERIFIED.md`: the remaining stand-ins for values DI2 keeps in native code.
 - Torso bisection isn't implemented. (DI2 has it disabled in the Walker's data anyway.)
-- Only Walker, Runner, Shambler and Thug have their own bodies (one variant each). The specials (Screamer, Slobber, Butcher, Mutator, Whipper, Suicider, Reformer) still use the Walker body with their own stats; paired counters and grapples are played by the Walker only.
+- Walker, Runner, Shambler, Thug, Screamer, Slobber, Butcher and Suicider have their own bodies, and the 22 elemental and hazard variants have their own meshes on their class's animations. The Mutator, Whipper and Reformer still use the Walker body with their own stats; paired counters and grapples are played by the Walker only.
 - Zombies steer straight at you, with no navmesh.
 
 ## Status
-A test bed, about 46% of the current goal: a fully playable showcase build on Horde map NH_04 (Bel-Air) with the
-full UI, gameplay, gore, every zombie variant and the whole map rendered as in game. Done so far: all 22 elemental and
-hazard variants, the specials' abilities, the gameplay and UI audit, and the NH_04 map tiles, landscape and foliage.
-Next: map performance (HLOD).
+About 20% of the full game. Each milestone ends in a scripted check that runs in the background (details in
+[docs/PLAN.md](docs/PLAN.md)).
+
+| Milestone | Weight | Done |
+|---|---|---|
+| M0 Foundation: container reader, importer, converters, commit guard, test harness | 8 | 70% |
+| M1 Combat showcase on Horde map NH_04 (the Gore Lab goal, detail below) | 25 | 46% |
+| M2 Game framework: saves, inventory, economy, crafting and mods, skills, progression | 14 | 5% |
+| M3 World: every map, traversal, doors, fast travel | 14 | 5% |
+| M4 Story: quests, NPCs, dialogue, cutscenes | 14 | 0% |
+| M5 Every playable slayer | 5 | 10% |
+| M6 Audio: Wwise banks, music, voice | 6 | 10% |
+| M7 Front end and the whole UI | 6 | 10% |
+| M8 Performance in every district | 4 | 5% |
+| M9 Expansions and modes: Haus, SoLA, Horde | 4 | 0% |
+| **Overall** | 100 | **~20%** |
+
+### M1 detail: the combat showcase
+A fully playable showcase build on Horde map NH_04 (Bel-Air) with the full UI, gameplay, gore, every zombie variant and
+the whole map rendered as in game, about 46% done. Done so far: all 22 elemental and hazard variants, the specials'
+abilities, the gameplay and UI audit, and the NH_04 map tiles, landscape and foliage. Next: map performance (HLOD).
 
 | Milestone | Weight | Done |
 |---|---|---|
@@ -125,5 +150,7 @@ locally from your install into git-ignored folders.
 - `rust/`: the Rust core (gore, fluids, damage, data readers), built by the scripts below.
 - `game/`: the Godot 4.7 project (scenes, gameplay, UI); `play.bat` runs it, `edit.bat` opens the editor.
 - `tools/`: extraction, conversion and check scripts; `test.bat` runs every test.
-- `recon/`: research notes on how the original works.
-- `CONTRIBUTING.md`: how to help. License: MIT (`LICENSE`).
+- `recon/`: research notes on how the original works; `docs/behavior/` indexes them, `docs/formats/` covers file formats.
+- `docs/PLAN.md`: the goal, milestones and decisions.
+- `gamedata/` (git-ignored): local decompiles and reverse-engineering notes, never committed.
+- `CONTRIBUTING.md`: how to help. License: GPL-3.0-or-later (`LICENSE`).
