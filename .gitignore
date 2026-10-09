@@ -57,3 +57,8 @@ game/override.cfg
 gamedata/
 out/
 .claude/worktrees/
+
+# Remake layout: decompiles, the Ghidra project, address-level RE notes (gamedata/re/SPEC.md) and converted-asset caches.
+/gamedata/
+# The live coordination board and hand-over notes stay local (this repository is public).
+/DECOMPISLE2_WORKSTREAMS.md
